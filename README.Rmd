@@ -1,0 +1,41 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# tcrtoolkit
+
+The goal of tcrtoolkit is to collect standalone & reusable snippets
+
+
+## Installation
+
+You can install tcrtoolkit from github with:
+
+```{r gh-installation, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("tcgriffith/myrkit")
+```
+
+## Example
+
+
+
+```{r example}
+ source("R/transnum.R")
+ datasets::CO2->t
+ require(dplyr,quietly = TRUE)
+ tbl_df(t) %>% mutate(conc=as.character(conc),uptake=as.character(uptake))->t
+ print(t)
+ t2<-transnum(t)
+ print(t2)
+```
